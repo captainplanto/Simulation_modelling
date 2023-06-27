@@ -21,7 +21,6 @@ def main():
     st.subheader("Generated Data")
     st.write(data)
     # Plot the data
-    st.subheader("Line Chart")
     options = {
         "title": {"text": "Chart for the model"},
         "tooltip": {
@@ -30,15 +29,13 @@ def main():
             "axisPointer": {"type": "shadow"},
         },
         "legend": {"top": "7%", "left": "center"},
-        "grid": {"left": "3%", "right": "4%", "bottom": "3%", "containLabel": "true"},
-        "yAxis": {"type": "value"},
-        "xAxis": {"type": "category", "data": time},
+        "grid": {"left": "3%", "right": "20%", "bottom": "3%", "containLabel": "true"},
+        "yAxis": {"type": "value", "name": "value"},
+        "xAxis": {"type": "category", "data": time, "name": "time"},
         "series": [
             {
                 "name": "parameter",
                 "type": "line",
-                "stack": "total",
-                "label": {"show": "true"},
                 "emphasis": {"focus": "series"},
                 "data": parameter,
             },
